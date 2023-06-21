@@ -218,7 +218,7 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/scan_barcode_button"
+                android:id="@+id/scan_button"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/scan_btn"
