@@ -30,8 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         requestCamera = registerForActivityResult(ActivityResultContracts.RequestPermission(),)
         {
             if (it){
@@ -56,11 +57,11 @@ class MainActivity : AppCompatActivity() {
             //.setFacing(CameraSource.CAMERA_FACING_FRONT)
             .build()
 
-        binding.barcodeResultView!!.holder.addCallback(object : SurfaceHolder.Callback{
+        binding.surfaceView.addCallback(object : SurfaceHolder.Callback{
             @SuppressLint("MissingPermission")
             override fun surfaceCreated(holder: SurfaceHolder) {
                try{
-                    cameraSource.start(binding.barcodeResultView!!.holder)
+                    cameraSource.start(binding.surfaceView!!.)
                }catch (e:IOException){
                    e.printStackTrace()
                }
